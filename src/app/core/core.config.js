@@ -10,8 +10,8 @@
    *  }}
    */
   var config = {
-    appErrorPrefix: 'Angular/Firebase/Material - demo - Error',
-    appTitle: 'Angular/Firebase/Material - demo'
+    appErrorPrefix: 'Badge frontend - demo - Error',
+    appTitle: 'Badge'
   };
 
   /**
