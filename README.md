@@ -4,11 +4,11 @@ Badge frontend application which uses [AngularJS](https://angularjs.org/).
 This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-backend).
 
 ## Main points
-[ ] Gulp task to help development process
-[ ] Build / deploy process
-[ ] Material design
-[ ] Configuration for each environment and/or developer
-[ ] And all the _rest_
+- [x] Gulp task to help development process
+- [ ] Build / deploy process
+- [ ] Material design
+- [ ] Configuration for each environment and/or developer
+- [ ] And all the _rest_
 
 ## Requirements
 
