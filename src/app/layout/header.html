@@ -1,0 +1,34 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <span>Badge</span>
+
+        <!-- fill up the space between left and right area -->
+
+        <span flex></span>
+
+        <md-button
+            data-ng-show="!vm.user"
+            data-ui-sref="auth.login"
+        >
+            <i class="mdi mdi-login"></i>
+
+            Login
+        </md-button>
+
+        <md-list-item class="md-3-line"
+            data-ng-show="vm.user"
+        >
+            <div class="md-list-item-text">
+                <p data-ng-bind="vm.user.identifier"></p>
+            </div>
+
+            <div class="md-list-item-text">
+                <md-button data-ng-click="vm.logout($event)">
+                    <i class="mdi mdi-logout"></i>
+
+                    Logout
+                </md-button>
+            </div>
+        </md-list-item>
+    </div>
+</md-toolbar>
