@@ -24,9 +24,6 @@
   function HeaderController($state) {
     var vm = this;
 
-    // Initialize user object
-    vm.user = {};
-
     /**
      * Method to make logout action.
      *
