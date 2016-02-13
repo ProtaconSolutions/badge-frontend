@@ -10,7 +10,7 @@
    *  }}
    */
   var config = {
-    appErrorPrefix: 'Badge frontend - demo - Error',
+    appErrorPrefix: 'Badge - Error',
     appTitle: 'Badge'
   };
 
@@ -33,15 +33,18 @@
    * @ngInject
    *
    * @param {$provide}                        $provide
+   * @param {$httpProvider}                   $httpProvider
    * @param {$logProvider}                    $logProvider
    * @param {$mdThemingProvider}              $mdThemingProvider
    * @param {Providers.RouterHelperProvider}  routerHelperProvider
    * @param {Providers.ExceptionHandler}      exceptionHandlerProvider
+   * @param {jwtInterceptorProvider}          jwtInterceptorProvider
    * @constructor
    */
   function moduleConfig(
-    $provide, $logProvider, $mdThemingProvider,
-    routerHelperProvider, exceptionHandlerProvider
+    $provide, $httpProvider, $logProvider, $mdThemingProvider,
+    routerHelperProvider, exceptionHandlerProvider,
+    jwtInterceptorProvider
   ) {
     // Add filename + line number feature to $log component
     $provide.decorator('$log', function decorator($delegate) {
@@ -65,6 +68,12 @@
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);
     }
+
+    jwtInterceptorProvider.tokenGetter = ['$localStorage', function($localStorage) {
+      return $localStorage.token;
+    }];
+
+    $httpProvider.interceptors.push('jwtInterceptor');
 
     // Configure material design palettes
     $mdThemingProvider
@@ -96,8 +105,10 @@
       // Use (instance of Error)'s stack to get the current line.
       var stack = (new Error()).stack.split('\n').slice(1);
 
-      // Throw away the first item because it is the `$log.fn()` function,
-      // but we want the code that called `$log.fn()`.
+      /**
+       * Throw away the first item because it is the `$log.fn()` function,
+       * but we want the code that called `$log.fn()`.
+       */
       stack.shift();
 
       // We only want the top line, thanks.
