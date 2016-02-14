@@ -18,5 +18,6 @@
   "globals": {
     "angular": false,
     "console": false
-  }
+  },
+  "-W040": true
 }
