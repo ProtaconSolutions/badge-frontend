@@ -40,7 +40,7 @@
      * @returns   {*}
      */
     function user() {
-      return $localStorage.token ? jwtHelper.decodeToken($localStorage.token) : {};
+      return $localStorage.token ? jwtHelper.decodeToken($localStorage.token) : false;
     }
   }
 }());
