@@ -18,20 +18,39 @@
    * @memberOf  Controllers
    * @ngInject
    *
-   * @param {ui.router.state.$state}  $state
+   * @param {*}                     $scope
+   * @param {*}                     $localStorage
+   * @param {Services.AuthService}  AuthService
+   * @param {Services.UserService}  UserService
    * @constructor
    */
-  function HeaderController($state) {
+  function HeaderController(
+    $scope, $localStorage,
+    AuthService, UserService
+  ) {
     var vm = this;
+
+    // Functions
+    vm.logout = logout;
+
+    //////////
 
     /**
      * Method to make logout action.
      *
      * @param {Event} $event
      */
-    vm.logout = function logout($event) {
+    function logout($event) {
       $event.preventDefault();
       $event.stopPropagation();
-    };
+
+      AuthService.logout();
+    }
+
+    $scope.$watch(function() {
+      return angular.toJson($localStorage);
+    }, function() {
+      vm.user = UserService.user();
+    });
   }
 })();
