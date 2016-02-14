@@ -8,7 +8,7 @@
    */
   angular
     .module('badgeFrontend.core', [
-      'badgeFrontend.core.auth',
+      'badgeFrontend.core.auth', 'badgeFrontend.core.interceptors', 'badgeFrontend.core.services',
       'badge-frontend-templates',
       'blocks.exception', 'blocks.logger', 'blocks.router'
     ]);

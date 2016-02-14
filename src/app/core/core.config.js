@@ -75,6 +75,7 @@
     }];
 
     $httpProvider.interceptors.push('jwtInterceptor');
+    $httpProvider.interceptors.push('ErrorInterceptor');
 
     // Configure material design palettes
     $mdThemingProvider
