@@ -8,7 +8,7 @@
 
         <span flex></span>
 
-        <md-button
+        <md-button aria-label="Login"
             data-ng-show="!vm.user"
             data-ui-sref="auth.login"
         >
@@ -18,13 +18,17 @@
         </md-button>
 
         <md-list-item data-ng-show="vm.user">
-            <md-button data-ui-sref="auth.profile">
+            <md-button aria-label="Profile"
+                data-ui-sref="auth.profile"
+            >
                 <i class="mdi mdi-account"></i>
 
                 {{vm.user.identifier}}
             </md-button>
 
-            <md-button data-ng-click="vm.logout($event)">
+            <md-button aria-label="Logout"
+                data-ng-click="vm.logout($event)"
+            >
                 <i class="mdi mdi-logout"></i>
 
                 Logout
