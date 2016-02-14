@@ -55,6 +55,8 @@
       data = data || {};
       title = title || '';
 
+      _showToast(message, data, title);
+
       $log.error('Error: ' + message, data);
     }
 
@@ -70,6 +72,8 @@
     function info(message, data, title) {
       data = data || {};
       title = title || '';
+
+      _showToast(message, data, title);
 
       $log.info('Info: ' + message, data);
     }
@@ -87,6 +91,8 @@
       data = data || {};
       title = title || '';
 
+      _showToast(message, data, title);
+
       $log.info('Success: ' + message, data);
     }
 
@@ -103,6 +109,8 @@
       data = data || {};
       title = title || '';
 
+      _showToast(message, data, title);
+
       $log.warn('Warning: ' + message, data, title);
     }
 
@@ -113,6 +121,22 @@
    */
     function log() {
       $log.log(arguments);
+    }
+
+    ////////// Private functions
+
+    /**
+     * Private function to show toast message.
+     *
+     * @param {*} message
+     * @param {*} data
+     * @param {*} title
+     * @private
+     */
+    function _showToast(message, data, title) {
+      $injector
+        .get('$mdToast')
+        .showSimple(title + ' ' + message + ' ' + (!_.isEmpty(data) ? data : ''));
     }
   }
 }());

@@ -20,6 +20,7 @@
    * @param {*}                           $state
    * @param {*}                           $localStorage
    * @param {*}                           jwtHelper
+   * @param {Factories.Logger}            logger
    * @param {Auth.Constants.AccessLevels} AccessLevels
    * @param {Constants.Config}            config
    * @returns {{
@@ -33,7 +34,7 @@
   function AuthService(
     $http, $state, $localStorage,
     jwtHelper,
-    AccessLevels, config
+    logger, AccessLevels, config
   ) {
     return {
       authenticate: authenticate,
@@ -57,6 +58,8 @@
         .then(onSuccess);
 
       function onSuccess(response) {
+        logger.success('Logged in successfully!');
+
         $localStorage.token = response.data.token;
 
         return response.data;
@@ -122,6 +125,8 @@
      * @memberOf  Services.AuthService
      */
     function logout() {
+      logger.success('Logged out successfully!');
+
       $localStorage.$reset();
 
       $state.go('auth.login');
