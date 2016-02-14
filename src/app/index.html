@@ -24,17 +24,11 @@
         data-ng-class="containerClass"
     >
         <div layout="column" layout-fill>
-            <header id="header">
-                <div data-ui-view="header"></div>
-            </header>
+            <header id="header" data-ui-view="header"></header>
 
-            <main class="md-padding" layout="row" flex>
-                <div id="layout" flex data-ui-view="content"></div>
-            </main>
+            <main class="md-padding" flex data-ui-view="content" layout="column" layout-align="center center"></main>
 
-            <footer id="footer">
-                <div data-ui-view="footer"></div>
-            </footer>
+            <footer id="footer" data-ui-view="footer"></footer>
         </div>
 
         <!-- inject:vendor:js -->

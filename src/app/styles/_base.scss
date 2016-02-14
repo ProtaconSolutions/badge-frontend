@@ -1,11 +1,23 @@
-@import "mixins";
-@import "material";
+@import 'mixins';
+@import 'material';
 
 html {
-  font-family: "RobotoDraft", "Roboto", sans-serif;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
   overflow-x: hidden;
 }
 
 body {
-  @include noSelect();
+  @include no-select();
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
