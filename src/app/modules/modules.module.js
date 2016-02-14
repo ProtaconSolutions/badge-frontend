@@ -2,14 +2,12 @@
   'use strict';
 
   /**
-   * Initialization of badgeFrontend.modules module. This file contains all 3rd party dependencies that application has.
+   * Initialization of badgeFrontend.modules module.
    *
    * @namespace Modules
    */
   angular
     .module('badgeFrontend.modules', [
-      'ngAnimate', 'ngMaterial', 'ngMessages', 'ngSanitize', 'ngStorage',
-      'ui.router',
-      'angular-jwt'
+      'badgeFrontend.badges'
     ]);
 })();
