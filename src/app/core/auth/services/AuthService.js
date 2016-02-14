@@ -53,7 +53,7 @@
      */
     function authenticate(credentials) {
       return $http
-        .post(config.backendUrl + 'auth/login', credentials, {withCredentials: true})
+        .post(config.backendUrl + 'auth/login', credentials)
         .then(onSuccess);
 
       function onSuccess(response) {
@@ -71,18 +71,18 @@
      * @returns   {boolean}
      */
     function authorize(accessLevel) {
-      var self = this;
+      var _this = this;
 
       if (accessLevel === AccessLevels.anon) {
         return true;
       }
 
       if (accessLevel === AccessLevels.user) {
-        return self.isAuthenticated();
+        return _this.isAuthenticated();
       }
 
       if (accessLevel === AccessLevels.admin) {
-        if (!self.isAuthenticated()) {
+        if (!_this.isAuthenticated()) {
           return false;
         }
 
