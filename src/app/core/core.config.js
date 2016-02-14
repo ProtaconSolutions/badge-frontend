@@ -142,9 +142,9 @@
      *  1) Check if user is authenticated to access page, and if not redirect user back to login page
      */
     $rootScope.$on('$stateChangeStart', function stateChangeStart(event, toState) {
-      if (toState.hasOwnProperty('data')
-        && toState.data.hasOwnProperty('access')
-        && !AuthService.authorize(toState.data.access)
+      if (toState.hasOwnProperty('data') &&
+        toState.data.hasOwnProperty('access') &&
+        !AuthService.authorize(toState.data.access)
       ) {
         event.preventDefault();
 
