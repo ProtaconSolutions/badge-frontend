@@ -57,7 +57,7 @@
         .then(onSuccess);
 
       function onSuccess(response) {
-        $localStorage.token = response.data;
+        $localStorage.token = response.data.token;
 
         return response.data;
       }
