@@ -22,7 +22,8 @@
   angular
     .module('badgeFrontend.core')
     .value('config', config)
-    .config(moduleConfig);
+    .config(moduleConfig)
+    .run(moduleRun);
 
   //////////
 
@@ -120,5 +121,35 @@
       // Call the original function with the new args.
       func.apply(func, args);
     };
+  }
+
+  /**
+   * @desc      Run block implementation for application.
+   * @namespace Run
+   * @memberOf  Core
+   * @ngInject
+   *
+   * @param {*}                     $rootScope
+   * @param {*}                     $state
+   * @param {Services.AuthService}  AuthService
+   */
+  function moduleRun(
+    $rootScope, $state,
+    AuthService
+  ) {
+    /**
+     * Route state change start event, this is needed for following:
+     *  1) Check if user is authenticated to access page, and if not redirect user back to login page
+     */
+    $rootScope.$on('$stateChangeStart', function stateChangeStart(event, toState) {
+      if (toState.hasOwnProperty('data')
+        && toState.data.hasOwnProperty('access')
+        && !AuthService.authorize(toState.data.access)
+      ) {
+        event.preventDefault();
+
+        $state.go('auth.login');
+      }
+    });
   }
 })();

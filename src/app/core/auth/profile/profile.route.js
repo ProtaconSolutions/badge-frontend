@@ -2,18 +2,18 @@
   'use strict';
 
   /**
-   * Specify run block for badgeFrontend.badges module.
+   * Specify run block for badgeFrontend.core.auth.profile module.
    *
    * @namespace Routes
    */
   angular
-    .module('badgeFrontend.badges')
+    .module('badgeFrontend.core.auth.profile')
     .run(moduleRun);
 
   //////////
 
   /**
-   * @desc      Run block for badgeFrontend.badges module.
+   * @desc      Run block for badgeFrontend.core.auth.profile module.
    * @namespace Auth
    * @memberOf  Routes
    * @ngInject
@@ -27,7 +27,7 @@
 
   /**
    * @name      getStates
-   * @desc      Getter method for badgeFrontend.core.auth.login module route definitions.
+   * @desc      Getter method for badgeFrontend.core.auth.profile module route definitions.
    * @memberOf  Routes.Auth
    *
    * @returns {*[]}
@@ -35,23 +35,36 @@
   function getStates(AccessLevels) {
     return [
       {
-        state: 'badges',
+        state: 'auth.profile',
         config: {
-          url: '/badges',
-          title: 'List',
-          parent: 'badgeFrontend',
+          url: '/profile',
+          title: 'Profile',
           data: {
             access: AccessLevels.user
           },
           views: {
             'content@': {
-              templateUrl: '/badge-frontend/badges/badges.html',
-              controller: 'BadgesController',
-              controllerAs: 'vm'
+              templateUrl: '/badge-frontend/core/auth/profile/profile.html',
+              controller: 'ProfileController',
+              controllerAs: 'vm',
+              resolve: {
+                _user: _user
+              }
             }
           }
         }
       }
     ];
+  }
+
+  /**
+   * @ngInject
+   *
+   * @param UserService
+   * @returns {*}
+   * @private
+   */
+  function _user(UserService) {
+    return UserService.user();
   }
 }());

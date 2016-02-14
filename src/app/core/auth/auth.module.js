@@ -10,6 +10,7 @@
     .module('badgeFrontend.core.auth', [
       'badgeFrontend.core.auth.constants',
       'badgeFrontend.core.auth.login',
+      'badgeFrontend.core.auth.profile',
       'badgeFrontend.core.auth.services'
     ]);
 }());

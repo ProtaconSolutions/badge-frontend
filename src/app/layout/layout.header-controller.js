@@ -19,21 +19,35 @@
    * @ngInject
    *
    * @param {*}                     $scope
+   * @param {*}                     $state
    * @param {*}                     $localStorage
    * @param {Services.AuthService}  AuthService
    * @param {Services.UserService}  UserService
    * @constructor
    */
   function HeaderController(
-    $scope, $localStorage,
+    $scope, $state, $localStorage,
     AuthService, UserService
   ) {
     var vm = this;
 
     // Functions
+    vm.profile = profile;
     vm.logout = logout;
 
     //////////
+
+    /**
+     * Method to redirect user to his/hers profile page.
+     *
+     * @param {Event} $event
+     */
+    function profile($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      $state.go('auth.profile');
+    }
 
     /**
      * Method to make logout action.

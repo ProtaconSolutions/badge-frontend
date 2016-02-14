@@ -38,6 +38,7 @@
         state: 'auth.login',
         config: {
           url: '/login',
+          title: 'Login',
           data: {
             access: AccessLevels.anon
           },
