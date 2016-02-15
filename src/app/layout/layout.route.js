@@ -38,6 +38,11 @@
         config: {
           abstract: true,
           views: {
+            sidenav: {
+              templateUrl: '/badge-frontend/layout/sidenav.html',
+              controller: 'SidenavController',
+              controllerAs: 'vm'
+            },
             header: {
               templateUrl: '/badge-frontend/layout/header.html',
               controller: 'HeaderController',

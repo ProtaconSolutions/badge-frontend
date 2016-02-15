@@ -1,28 +1,30 @@
-<md-content class="login md-padding">
-    <form name="loginForm" method="post" novalidate="novalidate">
-        <h3 class="md-title">Login</h3>
+<div class="flex" flex layout="column" layout-align="center center">
+    <md-content class="login md-padding text-center md-whiteframe-z3">
+        <form name="loginForm" method="post" novalidate="novalidate">
+            <h3 class="md-title">Login</h3>
 
-        <div>
-            <md-input-container>
-                <label>Username or email</label>
-                <input required="required"
-                    data-ng-model="vm.credentials.identifier"
-                />
-            </md-input-container>
-        </div>
+            <div>
+                <md-input-container>
+                    <label>Username or email</label>
+                    <input required="required"
+                        data-ng-model="vm.credentials.identifier"
+                    />
+                </md-input-container>
+            </div>
 
-        <div>
-            <md-input-container>
-                <label>Password</label>
-                <input required="required"
-                    data-ng-model="vm.credentials.password"
-                />
-            </md-input-container>
-        </div>
+            <div>
+                <md-input-container>
+                    <label>Password</label>
+                    <input required="required"
+                        data-ng-model="vm.credentials.password"
+                    />
+                </md-input-container>
+            </div>
 
-        <md-button class="md-raised md-primary"
-            data-ng-click="vm.login()"
-            data-ng-disabled="!loginForm.$valid"
-        >Login</md-button>
-    </form>
-</md-content>
+            <md-button class="md-raised md-primary"
+                data-ng-click="vm.login()"
+                data-ng-disabled="!loginForm.$valid"
+            >Login</md-button>
+        </form>
+    </md-content>
+</div>

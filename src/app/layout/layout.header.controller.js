@@ -21,12 +21,13 @@
    * @param {*}                     $scope
    * @param {*}                     $state
    * @param {*}                     $localStorage
+   * @param {*}                     $mdSidenav
    * @param {Services.AuthService}  AuthService
    * @param {Services.UserService}  UserService
    * @constructor
    */
   function HeaderController(
-    $scope, $state, $localStorage,
+    $scope, $state, $localStorage, $mdSidenav,
     AuthService, UserService
   ) {
     var vm = this;
@@ -34,6 +35,7 @@
     // Functions
     vm.profile = profile;
     vm.logout = logout;
+    vm.toggleSideMenu = toggleSideMenu;
 
     //////////
 
@@ -59,6 +61,12 @@
       $event.stopPropagation();
 
       AuthService.logout();
+    }
+
+    // Function to toggle side menu
+    function toggleSideMenu() {
+      $mdSidenav('left')
+        .toggle();
     }
 
     $scope.$watch(function() {

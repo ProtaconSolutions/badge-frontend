@@ -1,8 +1,17 @@
-<md-toolbar>
+<md-toolbar class="md-whiteframe-z3">
     <div class="md-toolbar-tools">
-        <span>
-            <a href="/badges">Badge</a>
-        </span>
+
+        <md-list-item class="hide-gt-md">
+            <md-button class="md-icon-button md-button md-ink-ripple " aria-label="Toggle menu"
+                data-ng-click="vm.toggleSideMenu()"
+            >
+                <i class="md-title mdi mdi-menu"></i>
+            </md-button>
+
+            <md-button class="md-title" aria-label="Badges"
+                <a href="/badges">Badge</a>
+            </md-button>
+        </md-list-item>
 
         <!-- fill up the space between left and right area -->
 
