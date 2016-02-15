@@ -1,5 +1,5 @@
 # What is this?
-[![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE.md)
+[![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE)
 [![GitHub version](https://badge.fury.io/gh/ProtaconSolutions%2Fbadge-frontend.svg)](https://badge.fury.io/gh/ProtaconSolutions%2Fbadge-frontend)
 [![Dependency Status](https://david-dm.org/ProtaconSolutions/badge-frontend.svg)](https://david-dm.org/ProtaconSolutions/badge-frontend)
 [![devDependency Status](https://david-dm.org/ProtaconSolutions/badge-frontend/dev-status.svg)](https://david-dm.org/ProtaconSolutions/badge-frontend#info=devDependencies)
