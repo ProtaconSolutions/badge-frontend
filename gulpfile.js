@@ -128,7 +128,10 @@ gulp.task('partials', function() {
 
 // Fonts
 gulp.task('fonts', function() {
-  return gulp.src('./bower_components/fontawesome/fonts/**')
+  return gulp.src([
+    './bower_components/fontawesome/fonts/**',
+    './bower_components/mdi/fonts/**'
+  ])
     .pipe(gulp.dest('./dist/fonts'))
   ;
 });
