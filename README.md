@@ -1,4 +1,6 @@
 # What is this?
+[![Dependency Status](https://david-dm.org/ProtaconSolutions/badge-frontend.svg)](https://david-dm.org/ProtaconSolutions/badge-frontend)
+[![devDependency Status](https://david-dm.org/ProtaconSolutions/badge-frontend/dev-status.svg)](https://david-dm.org/ProtaconSolutions/badge-frontend#info=devDependencies)
 
 Badge frontend application which uses [AngularJS](https://angularjs.org/). 
 This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-backend).
