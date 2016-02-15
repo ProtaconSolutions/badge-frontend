@@ -20,6 +20,7 @@
    *
    * @param {$log}      $log
    * @param {$injector} $injector
+   * @param {_}         _
    * @returns {{
    *    error:    Factories.Logger.error,
    *    info:     Factories.Logger.info,
@@ -28,7 +29,10 @@
    *    log:      Factories.Logger.log
    *  }}
    */
-  function logger($log, $injector) {
+  function logger(
+    $log, $injector,
+    _
+  ) {
     return {
       // toastr implementations
       error: error,
