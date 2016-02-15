@@ -16,19 +16,24 @@
    * @memberOf    Services
    * @ngInject
    *
+   * @param {*} $http
    * @param {*} $localStorage
    * @param {*} jwtHelper
+   * @param {*} config
    * @returns {{
-   *    user: Services.UserService.user
+   *    user: Services.UserService.user,
+   *    getProfile: Services.UserService.getProfile
    *  }}
    * @constructor
    */
   function UserService(
-    $localStorage,
-    jwtHelper
+    $http, $localStorage,
+    jwtHelper,
+    config
   ) {
     return {
-      user: user
+      user: user,
+      getProfile: getProfile
     };
 
     //////////
@@ -41,6 +46,16 @@
      */
     function user() {
       return $localStorage.token ? jwtHelper.decodeToken($localStorage.token) : false;
+    }
+
+    /**
+     * @name      getProfile
+     * @memberOf  Services.UserService
+     *
+     * @returns {*}
+     */
+    function getProfile() {
+      return $http.get(config.backendUrl + 'auth/profile');
     }
   }
 }());

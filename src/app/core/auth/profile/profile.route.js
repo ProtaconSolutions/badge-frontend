@@ -48,7 +48,8 @@
               controller: 'ProfileController',
               controllerAs: 'vm',
               resolve: {
-                _user: _user
+                _user: _user,
+                _profile: _profile
               }
             }
           }
@@ -66,5 +67,16 @@
    */
   function _user(UserService) {
     return UserService.user();
+  }
+
+  /**
+   * @ngInject
+   *
+   * @param UserService
+   * @returns {*}
+   * @private
+   */
+  function _profile(UserService) {
+    return UserService.getProfile();
   }
 }());

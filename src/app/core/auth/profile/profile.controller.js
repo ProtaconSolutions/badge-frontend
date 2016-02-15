@@ -19,11 +19,13 @@
    * @ngInject
    *
    * @param {*} _user
+   * @param {*} _profile
    * @constructor
    */
-  function ProfileController(_user) {
+  function ProfileController(_user, _profile) {
     var vm = this;
 
     vm.user = _user;
+    vm.profile = _profile.data;
   }
 }());
