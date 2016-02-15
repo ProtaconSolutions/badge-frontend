@@ -1,4 +1,6 @@
 # What is this?
+[![License](http://img.shields.io/:license-mit-blue.svg)](LICENSE.md)
+[![GitHub version](https://badge.fury.io/gh/ProtaconSolutions%2Fbadge-frontend.svg)](https://badge.fury.io/gh/ProtaconSolutions%2Fbadge-frontend)
 [![Dependency Status](https://david-dm.org/ProtaconSolutions/badge-frontend.svg)](https://david-dm.org/ProtaconSolutions/badge-frontend)
 [![devDependency Status](https://david-dm.org/ProtaconSolutions/badge-frontend/dev-status.svg)](https://david-dm.org/ProtaconSolutions/badge-frontend#info=devDependencies)
 
@@ -9,6 +11,7 @@ This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-ba
 - [x] Gulp task to help development process
 - [ ] Build / deploy process
 - [ ] Material design
+- [ ] Configuration for each environment and/or developer
 - [ ] Configuration for each environment and/or developer
 - [ ] And all the _rest_
 
