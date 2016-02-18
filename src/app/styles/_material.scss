@@ -1,3 +1,5 @@
+@import 'mixins';
+
 $shadow-color-1: rgba(0, 0, 0, .2);
 $shadow-color-2: rgba(0, 0, 0, .14);
 $shadow-color-3: rgba(0, 0, 0, .12);
@@ -14,8 +16,4 @@ $shadow-color-3: rgba(0, 0, 0, .12);
       line-height: normal;
     }
   }
-}
-
-.badge-sidenav {
-  display: flex;
 }

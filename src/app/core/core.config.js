@@ -80,9 +80,8 @@
     // Configure material design palettes
     $mdThemingProvider
       .theme('default')
-      .primaryPalette('blue-grey')
-      .accentPalette('blue')
-    ;
+      .primaryPalette('blue')
+      .accentPalette('light-blue');
 
     // Configure exception handler provider
     exceptionHandlerProvider.configure(config.appErrorPrefix);
