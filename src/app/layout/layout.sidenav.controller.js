@@ -26,6 +26,10 @@
 
     vm.contents = [
       {
+        title: 'Home',
+        url: '/'
+      },
+      {
         title: 'User data',
         items: [
           {

@@ -20,6 +20,14 @@
     <md-content data-ng-repeat="content in vm.contents">
         <md-menu-item>
             <md-button class="md-primary"
+                ng-if="content.url"
+                data-ng-href="{{content.url}}"
+           >
+                {{content.title}}
+            </md-button>
+
+            <md-button class="md-primary"
+                ng-if="content.items"
                 data-ng-click="content.open = !content.open;"
             >
                 <div layout="row" layout-align="space-between center">
@@ -46,8 +54,9 @@
                 {{item.title}}
             </md-button>
 
-            <md-button disabled="disabled"
+            <md-button
                 data-ng-if="!item.state"
+                data-ng-disabled="true"
             >
                 {{item.title}}
             </md-button>
