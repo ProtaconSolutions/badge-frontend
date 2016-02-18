@@ -21,7 +21,7 @@ This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-ba
 First of all you have to install ```npm``` and ```node.js``` to your box. Installation instructions can
 be found [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 
-After that you need to install ```bower``` and ```gulp<``` main packages to make all  things to happen. 
+After that you need to install ```bower``` and ```gulp``` main packages to make all  things to happen. 
 These can be installed with following commands on your *nix box. 
 ```
 sudo npm install bower -g
