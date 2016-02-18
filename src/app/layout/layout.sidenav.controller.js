@@ -18,17 +18,57 @@
    * @memberOf  Controllers
    * @ngInject
    *
-   * @param {*}                     $scope
-   * @param {*}                     $localStorage
-   * @param {*}                     $mdSidenav
-   * @param {Services.UserService}  UserService
+   * @param {*} $mdSidenav
    * @constructor
    */
-  function SidenavController(
-    $scope, $localStorage, $mdSidenav,
-    UserService
-  ) {
+  function SidenavController($mdSidenav) {
     var vm = this;
+
+    vm.contents = [
+      {
+        title: 'User data',
+        items: [
+          {
+            title: 'My profile',
+            state: 'auth.profile'
+          },
+          {
+            title: 'My badges',
+            state: ''
+          },
+          {
+            title: 'My achievements',
+            state: ''
+          }
+        ]
+      },
+      {
+        title: 'Statistics',
+        items: [
+          {
+            title: 'Badges',
+            state: ''
+          },
+          {
+            title: 'Achievements',
+            state: ''
+          }
+        ]
+      },
+      {
+        title: 'Administration',
+        items: [
+          {
+            title: 'Badges',
+            state: ''
+          },
+          {
+            title: 'Achievements',
+            state: ''
+          }
+        ]
+      }
+    ];
 
     // Functions
     vm.hideSideMenu = hideSideMenu;
@@ -39,11 +79,5 @@
     function hideSideMenu() {
       $mdSidenav('left').close();
     }
-
-    $scope.$watch(function() {
-      return angular.toJson($localStorage);
-    }, function() {
-      vm.user = UserService.user();
-    });
   }
 })();

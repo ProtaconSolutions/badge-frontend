@@ -133,11 +133,14 @@
    * @param {*}                     $state
    * @param {*}                     $localStorage
    * @param {Services.AuthService}  AuthService
+   * @param {Services.UserService}  UserService
    */
   function moduleRun(
     $rootScope, $state, $localStorage,
-    AuthService
+    AuthService, UserService
   ) {
+    $rootScope.user = UserService.user();
+
     // On reload check user data
     _checkUser();
 
@@ -157,6 +160,12 @@
 
         $state.go('auth.login');
       }
+    });
+
+    $rootScope.$watch(function() {
+      return angular.toJson($localStorage);
+    }, function() {
+      $rootScope.user = UserService.user();
     });
 
     ////////// Private function
