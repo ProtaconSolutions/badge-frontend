@@ -132,17 +132,24 @@
    *
    * @param {*}                     $rootScope
    * @param {*}                     $state
+   * @param {*}                     $localStorage
    * @param {Services.AuthService}  AuthService
    */
   function moduleRun(
-    $rootScope, $state,
+    $rootScope, $state, $localStorage,
     AuthService
   ) {
+    // On reload check user data
+    _checkUser();
+
     /**
      * Route state change start event, this is needed for following:
      *  1) Check if user is authenticated to access page, and if not redirect user back to login page
      */
     $rootScope.$on('$stateChangeStart', function stateChangeStart(event, toState) {
+      // On state change start check user data
+      _checkUser();
+
       if (toState.hasOwnProperty('data') &&
         toState.data.hasOwnProperty('access') &&
         !AuthService.authorize(toState.data.access)
@@ -152,5 +159,19 @@
         $state.go('auth.login');
       }
     });
+
+    ////////// Private function
+
+    /**
+     * Private helper function to check that user token is valid or not. If token has expired we need to erase it from
+     * local storage to make sure that everything works in application as smooth as possible.
+     *
+     * @private
+     */
+    function _checkUser() {
+      if (AuthService.isAuthenticated(true) === false) {
+        delete $localStorage.token;
+      }
+    }
   }
 })();
