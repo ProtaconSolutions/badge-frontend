@@ -18,17 +18,14 @@
    * @memberOf  Controllers
    * @ngInject
    *
-   * @param {*}                     $scope
    * @param {*}                     $state
-   * @param {*}                     $localStorage
    * @param {*}                     $mdSidenav
    * @param {Services.AuthService}  AuthService
-   * @param {Services.UserService}  UserService
    * @constructor
    */
   function HeaderController(
-    $scope, $state, $localStorage, $mdSidenav,
-    AuthService, UserService
+    $state, $mdSidenav,
+    AuthService
   ) {
     var vm = this;
 
@@ -68,11 +65,5 @@
       $mdSidenav('left')
         .toggle();
     }
-
-    $scope.$watch(function() {
-      return angular.toJson($localStorage);
-    }, function() {
-      vm.user = UserService.user();
-    });
   }
 })();

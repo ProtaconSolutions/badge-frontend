@@ -18,19 +18,22 @@
    * @memberOf  Controllers
    * @ngInject
    *
+   * @param {*} $state
    * @param {*} $mdSidenav
    * @constructor
    */
-  function SidenavController($mdSidenav) {
+  function SidenavController($state, $mdSidenav) {
     var vm = this;
 
     vm.contents = [
       {
         title: 'Home',
-        url: '/'
+        icon: 'mdi-home',
+        state: 'modules.home'
       },
       {
         title: 'User data',
+        icon: 'mdi-account',
         items: [
           {
             title: 'My profile',
@@ -48,6 +51,7 @@
       },
       {
         title: 'Statistics',
+        icon: 'mdi-chart-line',
         items: [
           {
             title: 'Badges',
@@ -61,6 +65,7 @@
       },
       {
         title: 'Administration',
+        icon: 'mdi-settings',
         items: [
           {
             title: 'Badges',
@@ -76,12 +81,17 @@
 
     // Functions
     vm.hideSideMenu = hideSideMenu;
+    vm.goToPage = goToPage;
 
     //////////
 
     // Method to close sidenav
     function hideSideMenu() {
       $mdSidenav('left').close();
+    }
+
+    function goToPage(state) {
+      $state.go(state);
     }
   }
 })();

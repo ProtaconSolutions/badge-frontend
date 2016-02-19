@@ -1,10 +1,9 @@
 <md-toolbar class="md-whiteframe-z3">
     <div class="md-toolbar-tools">
-
         <md-list-item>
             <md-button class="hide-gt-md md-icon-button md-button md-ink-ripple" aria-label="Toggle menu"
                 data-ng-click="vm.toggleSideMenu()"
-                data-ng-if="vm.user"
+                data-ng-if="user"
             >
                 <i class="md-title mdi mdi-menu"></i>
             </md-button>
@@ -17,7 +16,7 @@
         <!-- fill up the space between left and right area -->
         <span flex></span>
 
-        <md-list-item data-ng-show="!vm.user">
+        <md-list-item data-ng-show="!user">
             <md-button aria-label="Login"
                 data-ui-sref="auth.login"
             >
@@ -27,13 +26,13 @@
             </md-button>
         </md-list-item>
 
-        <md-list-item data-ng-show="vm.user">
+        <md-list-item data-ng-show="user">
             <md-button aria-label="Profile"
                 data-ui-sref="auth.profile"
             >
                 <i class="mdi mdi-account"></i>
 
-                {{vm.user.identifier}}
+                {{user.identifier}}
             </md-button>
 
             <md-button aria-label="Logout"

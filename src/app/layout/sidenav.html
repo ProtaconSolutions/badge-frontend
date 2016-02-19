@@ -7,7 +7,7 @@
         <span flex></span>
 
         <md-list-item class="hide-gt-md">
-            <md-button class="md-icon-button md-button md-ink-ripple " aria-label="Toggle menu"
+            <md-button class="md-icon-button md-button md-ink-ripple" aria-label="Toggle menu"
                 data-ng-click="vm.hideSideMenu()"
             >
                 <i class="md-title mdi mdi-arrow-left-bold"></i>
@@ -20,18 +20,30 @@
     <md-content data-ng-repeat="content in vm.contents">
         <md-menu-item>
             <md-button class="md-primary"
-                ng-if="content.url"
-                data-ng-href="{{content.url}}"
-           >
-                {{content.title}}
+                data-ng-if="content.state"
+                data-ng-click="vm.goToPage(content.state)"
+            >
+                <div layout="row" layout-align="space-between center">
+                    <div>
+                        <i class="mdi"
+                           data-ng-class="content.icon"
+                        ></i>
+
+                        {{content.title}}
+                    </div>
+                </div>
             </md-button>
 
             <md-button class="md-primary"
-                ng-if="content.items"
+                data-ng-if="content.items"
                 data-ng-click="content.open = !content.open;"
             >
                 <div layout="row" layout-align="space-between center">
                     <div>
+                        <i class="mdi"
+                            data-ng-class="content.icon"
+                        ></i>
+
                         {{content.title}}
                     </div>
                     <div>
@@ -43,24 +55,25 @@
             </md-button>
         </md-menu-item>
 
-        <md-menu-item class="menu-items"
-            data-ng-repeat="item in content.items"
-            data-ng-show="content.open"
-        >
-            <md-button
-                data-ng-if="item.state"
-                data-ui-sref="{{item.state}}"
+        <span data-ng-show="content.open">
+            <md-menu-item class="menu-items"
+                data-ng-repeat="item in content.items"
             >
-                {{item.title}}
-            </md-button>
+                <md-button
+                    data-ng-if="item.state"
+                    data-ng-click="vm.goToPage(item.state)"
+                >
+                    {{item.title}}
+                </md-button>
 
-            <md-button
-                data-ng-if="!item.state"
-                data-ng-disabled="true"
-            >
-                {{item.title}}
-            </md-button>
-        </md-menu-item>
+                <md-button
+                    data-ng-if="!item.state"
+                    data-ng-disabled="true"
+                >
+                    {{item.title}}
+                </md-button>
+            </md-menu-item>
+        </span>
 
         <md-divider></md-divider>
     </md-content>
