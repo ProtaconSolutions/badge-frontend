@@ -1,12 +1,14 @@
 <div class="flex" flex layout="column" layout-align="center center">
     <md-content class="login md-padding text-center md-whiteframe-z3">
-        <form name="loginForm" method="post" novalidate="novalidate">
+        <form name="loginForm" method="post" novalidate="novalidate"
+            data-ng-submit="vm.login()"
+        >
             <h3 class="md-title">Login</h3>
 
             <div>
                 <md-input-container>
                     <label>Username or email</label>
-                    <input required="required"
+                    <input type="text" required="required"
                         data-ng-model="vm.credentials.identifier"
                     />
                 </md-input-container>
@@ -15,14 +17,13 @@
             <div>
                 <md-input-container>
                     <label>Password</label>
-                    <input required="required"
+                    <input type="password" required="required"
                         data-ng-model="vm.credentials.password"
                     />
                 </md-input-container>
             </div>
 
-            <md-button class="md-raised md-primary"
-                data-ng-click="vm.login()"
+            <md-button class="md-raised md-primary" type="submit"
                 data-ng-disabled="!loginForm.$valid"
             >Login</md-button>
         </form>
