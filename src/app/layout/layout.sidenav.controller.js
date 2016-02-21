@@ -55,7 +55,7 @@
         items: [
           {
             title: 'Badges',
-            state: ''
+            state: 'modules.badges'
           },
           {
             title: 'Achievements',
