@@ -27,7 +27,7 @@
 
     // Already authenticated so redirect back to badges
     if (AuthService.isAuthenticated(true)) {
-      $state.go('badges');
+      $state.go('auth.profile');
     }
 
     // Expose functions
@@ -42,7 +42,7 @@
         .then(onSuccess, onError);
 
       function onSuccess() {
-        $state.go('badges');
+        $state.go('auth.profile');
       }
 
       function onError() {
