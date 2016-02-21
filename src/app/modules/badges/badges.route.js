@@ -2,18 +2,18 @@
   'use strict';
 
   /**
-   * Specify run block for badgeFrontend.badges module.
+   * Specify run block for badgeFrontend.modules.badges module.
    *
    * @namespace Routes
    */
   angular
-    .module('badgeFrontend.badges')
+    .module('badgeFrontend.modules.badges')
     .run(moduleRun);
 
   //////////
 
   /**
-   * @desc      Run block for badgeFrontend.badges module.
+   * @desc      Run block for badgeFrontend.modules.badges module.
    * @namespace Auth
    * @memberOf  Routes
    * @ngInject
@@ -27,7 +27,7 @@
 
   /**
    * @name      getStates
-   * @desc      Getter method for badgeFrontend.core.auth.login module route definitions.
+   * @desc      Getter method for badgeFrontend.modules.badge module route definitions.
    * @memberOf  Routes.Auth
    *
    * @returns {*[]}
@@ -35,23 +35,38 @@
   function getStates(AccessLevels) {
     return [
       {
-        state: 'badges',
+        state: 'modules.badges',
         config: {
           url: '/badges',
-          title: 'List',
-          parent: 'badgeFrontend',
+          title: 'Badges',
           data: {
             access: AccessLevels.user
           },
           views: {
             'content@': {
-              templateUrl: '/badge-frontend/badges/badges.html',
+              templateUrl: '/badge-frontend/modules/badges/badges.html',
               controller: 'BadgesController',
-              controllerAs: 'vm'
+              controllerAs: 'vm',
+              resolve: {
+                _badges: _badges
+              }
             }
           }
         }
       }
     ];
+  }
+
+  //////////
+
+  /**
+   * @ngInject
+   *
+   * @param {Services.BadgeService} BadgeService
+   * @returns {*}
+   * @private
+   */
+  function _badges(BadgeService) {
+    return BadgeService.find();
   }
 }());

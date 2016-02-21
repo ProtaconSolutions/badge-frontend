@@ -9,6 +9,6 @@
   angular
     .module('badgeFrontend.modules', [
       'badgeFrontend.modules.home',
-      'badgeFrontend.badges'
+      'badgeFrontend.modules.badges'
     ]);
 })();

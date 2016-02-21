@@ -2,12 +2,12 @@
   'use strict';
 
   /**
-   * Specify controller for badgeFrontend.badges module.
+   * Specify controller for badgeFrontend.modules.badges module.
    *
    * @namespace Controllers
    */
   angular
-    .module('badgeFrontend.badges')
+    .module('badgeFrontend.modules.badges')
     .controller('BadgesController', BadgesController);
 
   //////////
@@ -20,5 +20,10 @@
    *
    * @constructor
    */
-  function BadgesController() {}
+  function BadgesController(_badges) {
+    var vm = this;
+
+    // Store badges
+    vm.badges = _badges.data;
+  }
 }());
