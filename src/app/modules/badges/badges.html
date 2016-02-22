@@ -1,7 +1,29 @@
 <md-content class="md-padding badges">
-    <h1 class="md-title">Implement badges view...</h1>
+    <h2 class="md-title">Badges</h2>
 
-    <h2 class="md-subheader">Badge data from server</h2>
+    <div layout="row" layout-align="center center" layout-wrap>
+        <md-card style="width: 380px;" class="md-whiteframe-z3" data-ng-repeat="badge in vm.badges track by $index">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">
+                        {{badge.title}}
+                    </span>
+                    <span class="md-subhead">
+                        {{badge.description}}
+                    </span>
+                </md-card-title-text>
 
-    <pre>{{vm.badges | json}}</pre>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media">
+                        <img data-http-src="{{::vm.getImageUrl(badge.image)}}" />
+                    </div>
+                </md-card-title-media>
+            </md-card-title>
+
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
 </md-content>

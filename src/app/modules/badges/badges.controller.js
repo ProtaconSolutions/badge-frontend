@@ -20,10 +20,28 @@
    *
    * @constructor
    */
-  function BadgesController(_badges) {
+  function BadgesController(
+    config,
+    _badges
+  ) {
     var vm = this;
 
     // Store badges
     vm.badges = _badges.data;
+
+    // Functions
+    vm.getImageUrl = getImageUrl;
+
+    //////////
+
+    /**
+     * Function to get image URL. Note that images are hosted from backend server.
+     *
+     * @param {*} image
+     * @returns {string}
+     */
+    function getImageUrl(image) {
+      return config.backendUrl + 'image/show/' + image.hash;
+    }
   }
 }());
