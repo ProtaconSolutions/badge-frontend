@@ -11,6 +11,6 @@
     .module('badgeFrontend.dependencies', [
       'ngAnimate', 'ngMaterial', 'ngMessages', 'ngSanitize', 'ngStorage',
       'ui.router',
-      'angular-jwt', 'angular-loading-bar', 'angular.img'
+      'angular-jwt', 'angular-loading-bar', 'angular.img', 'angularMoment'
     ]);
 })();
