@@ -8,11 +8,10 @@
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "keywords": [],
-  "dependencies": {
-    "bower": "1.6.5",
-    "connect-history-api-fallback": "1.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "bower": "1.7.7",
+    "connect-history-api-fallback": "1.1.0",
     "event-stream": "3.3.2",
     "gulp": "3.9.0",
     "gulp-angular-filesort": "1.1.1",
