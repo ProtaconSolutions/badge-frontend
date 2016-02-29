@@ -35,7 +35,7 @@ gulp.task('jshint', function() {
 
 // CSS
 gulp.task('clean-css', function() {
-  return gulp.src('./.tmp/css').pipe(g.clean());
+  return gulp.src('./.tmp/css').pipe(g.rimraf());
 });
 
 gulp.task('styles', ['clean-css'], function() {
