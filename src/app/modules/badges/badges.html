@@ -1,6 +1,10 @@
 <md-content class="md-padding badges">
     <h2 class="md-title">Badges</h2>
 
+    <!-- for debug purposes
+    <pre><small>{{vm.badges | json}}</small></pre>
+    -->
+
     <div layout="row" layout-align="center center" layout-wrap>
         <md-card style="width: 380px;" class="md-whiteframe-z3" data-ng-repeat="badge in vm.badges track by $index">
             <md-card-title>
@@ -15,6 +19,8 @@
 
                 <md-card-title-media>
                     <div class="md-media-lg card-media">
+                        <small>{{badge.updatedAt | amDateFormat: 'DD.MM.YYYY, HH:mm:ss'}}</small>
+
                         <img data-http-src="{{::vm.getImageUrl(badge.image)}}" />
                     </div>
                 </md-card-title-media>
