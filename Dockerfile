@@ -13,8 +13,7 @@ WORKDIR /src
 COPY . /src
 RUN npm install
 RUN ./node_modules/bower/bin/bower install --allow-root
-RUN gulp dist
 
-EXPOSE 3001
+EXPOSE 4000
 
-CMD gulp production
+CMD gulp dist && gulp production
