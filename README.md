@@ -71,7 +71,7 @@ To start production ready build in the project run:
 gulp production
 ```
 
-Then head to `http://localhost:3001` in your browser
+Then head to `http://localhost:4000` in your browser
 
 ## Contributing
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.

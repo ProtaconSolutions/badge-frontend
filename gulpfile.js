@@ -158,7 +158,7 @@ gulp.task('statics', plugins.serve({
 
 // Production file server, note remember to run 'gulp dist' first!
 gulp.task('production', plugins.serve({
-  port: 3001,
+  port: 4000,
   root: ['./dist'],
   middleware: historyApiFallback({})
 }));
