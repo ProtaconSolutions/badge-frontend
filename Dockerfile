@@ -14,6 +14,8 @@ COPY . /src
 RUN npm install
 RUN ./node_modules/bower/bin/bower install --allow-root
 
+ENV BADGE_BACKENDURL http://localhost/
+
 EXPOSE 4000
 
 CMD gulp dist && gulp production
