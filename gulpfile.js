@@ -138,7 +138,7 @@ gulp.task('fonts', function() {
 });
 
 // Dist
-gulp.task('dist', ['vendors', 'assets', 'fonts', 'styles-dist', 'scripts-dist'], function() {
+gulp.task('dist', ['config', 'vendors', 'assets', 'fonts', 'styles-dist', 'scripts-dist'], function() {
   return gulp.src('./src/app/index.html')
     .pipe(plugins.inject(gulp.src('./dist/vendors.min.{js,css}'), {
       ignorePath: 'dist',
