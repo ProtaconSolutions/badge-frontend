@@ -190,14 +190,27 @@ gulp.task('watch', ['statics', 'default'], function() {
 });
 
 gulp.task('config', function() {
-  gulp.src('./src/app/config/config.json')
-    .pipe(ngConstant({
+  var constants;
+
+  try {
+    constants = JSON.parse(fs.readFileSync('./src/app/config/config.json', 'utf8'));
+  } catch (error) {
+    constants = {
+      "config": {
+        "backendUrl": process.env.BADGE_BACKENDURL
+      }
+    }
+  }
+
+  return ngConstant({
       name: 'badgeFrontend.config',
       templatePath: './src/app/config/template.ejs',
-      space: '  '
-    }))
-    // Writes config.js to dist/ folder
-    .pipe(gulp.dest('./src/app/config/'));
+      space: '  ',
+      constants: constants,
+      stream: true
+    })
+    .pipe(plugins.rename('config.js')) // Rename stream file
+    .pipe(gulp.dest('./src/app/config/')); // Writes config.js to dist/ folder
 });
 
 // Default task
