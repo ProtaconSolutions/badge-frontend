@@ -12,6 +12,8 @@ This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-ba
 * [Requirements](#requirements)
 * [Installation](#installation)
   * [Configuration](#configuration)
+    * [By config.json file](#by-configjson-file)
+    * [By ENV variable](#by-env-variable)
 * [Development](#development)
 * [Production ready build - a.k.a. dist](#production-ready-build---aka-dist)
   * [Running production ready build](#running-production-ready-build)
@@ -50,11 +52,17 @@ npm install
 ```
 
 ### Configuration
+Currently only configurable value is used backend url address that application needs to make requests. You can
+configure this value by two different ways.
+
+#### By config.json file
 See ```/src/app/config/config.json_example``` file and copy it to ```/src/app/config/config.json``` file and make
-necessary changes to it. 
+necessary changes to it.
+ 
+#### By ENV variable
+Just set ```BADGE_BACKENDURL``` ENV variable and then application will use that within ```gulp serve``` and ```gulp dist``` commands. 
 
 ## Development
-
 To start developing in the project run:
 
 ```bash
