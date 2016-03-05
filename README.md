@@ -7,6 +7,21 @@
 Badge frontend application which uses [AngularJS](https://angularjs.org/). 
 This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-backend).
 
+#  Table of Contents
+* [Main points](#main-points)
+* [Requirements](#requirements)
+* [Installation](#installation)
+  * [Configuration](#configuration)
+* [Development](#development)
+* [Production ready build - a.k.a. dist](#production-ready-build---aka-dist)
+  * [Running production ready build](#running-production-ready-build)
+* [Docker](#docker)
+* [Contributing](#contributing)
+* [Author](#author)
+* [LICENSE](#license)
+
+
+
 ## Main points
 - [x] Gulp task to help development process
 - [ ] Build / deploy process
