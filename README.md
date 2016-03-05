@@ -16,11 +16,10 @@ This frontend uses [badge-backend](https://github.com/ProtaconSolutions/badge-ba
 * [Production ready build - a.k.a. dist](#production-ready-build---aka-dist)
   * [Running production ready build](#running-production-ready-build)
 * [Docker](#docker)
+* [Useful resources](#useful-resources)
 * [Contributing](#contributing)
 * [Author](#author)
 * [LICENSE](#license)
-
-
 
 ## Main points
 - [x] Gulp task to help development process
@@ -105,6 +104,10 @@ With this docker image you can set following ENV variables to specify your datab
 ```
 BADGE_BACKENDURL
 ```
+
+## Useful resources
+* [nvm](https://github.com/creationix/nvm) - Node Version Manager - Simple bash script to manage multiple active node.js versions
+* [ncu](https://github.com/tjunnone/npm-check-updates) - Find newer versions of package dependencies than what your package.json or bower.json allows
 
 ## Contributing
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
