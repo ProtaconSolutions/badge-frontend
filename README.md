@@ -73,6 +73,24 @@ gulp production
 
 Then head to `http://localhost:4000` in your browser
 
+## Docker
+This project has also [Docker](https://www.docker.com/) container that you can use. Actual [Dockerfile](Dockerfile) uses [node:4.3](https://github.com/nodejs/docker-node/blob/5934cfb183f13fec7ef17c5d185dbfe444d1da0f/4.3/Dockerfile) as the base image.
+
+You can easily build your own docker image with following command
+```
+docker build -t yourimage .
+```
+
+And after that run that docker image by following command
+```
+docker run -t -i yourimage
+```
+
+With this docker image you can set following ENV variables to specify your database connection:
+```
+BADGE_BACKENDURL
+```
+
 ## Contributing
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
 
