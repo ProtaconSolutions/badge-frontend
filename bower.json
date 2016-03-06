@@ -24,11 +24,11 @@
     "angular-img-http-src": "0.1.0",
     "angular-jwt": "0.0.9",
     "angular-loading-bar": "0.8.0",
-    "angular-material": "1.0.5",
+    "angular-material": "1.0.6",
     "angular-moment": "0.10.3",
     "angular-ui-router": "0.2.18",
     "angular-sanitize": "1.5.0",
-    "lodash": "4.5.1",
+    "lodash": "4.6.1",
     "ngstorage": "0.3.10",
     "mdi": "1.4.57",
     "moment": "2.11.2"
