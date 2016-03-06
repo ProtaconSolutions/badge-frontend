@@ -4,7 +4,7 @@
     "/dist/frontend.min.js",
     "/dist/frontend.min.css"
   ],
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Frontend application for badge",
   "authors": [
     "Tarmo Leppänen"
