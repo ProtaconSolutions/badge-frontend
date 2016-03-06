@@ -5,3 +5,4 @@ dist/*
 .idea/
 src/app/config/config.js
 src/app/config/config.json
+src/app/config/package.js

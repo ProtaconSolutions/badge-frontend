@@ -17,6 +17,9 @@ var mainBowerFiles = require('main-bower-files');
 var historyApiFallback = require('connect-history-api-fallback');
 var isWatching = false;
 
+// Read and parse package.json contents
+var packageData = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+
 var htmlMinOpts = {
   removeComments: true,
   collapseWhitespace: true,
@@ -189,7 +192,10 @@ gulp.task('watch', ['statics', 'default'], function() {
   });
 });
 
-gulp.task('config', function() {
+// Config
+gulp.task('config', ['configFile', 'configPackage']);
+
+gulp.task('configFile', function() {
   var constants;
 
   try {
@@ -211,6 +217,26 @@ gulp.task('config', function() {
     })
     .pipe(plugins.rename('config.js')) // Rename stream file
     .pipe(gulp.dest('./src/app/config/')); // Writes config.js to dist/ folder
+});
+
+gulp.task('configPackage', function() {
+  var constants = {
+    package: {
+      name: packageData.name,
+      version: packageData.version
+    }
+  };
+
+  return ngConstant({
+      name: 'badgeFrontend.config',
+      templatePath: './src/app/config/template.ejs',
+      space: '    ',
+      constants: constants,
+      stream: true,
+      deps: false
+    })
+    .pipe(plugins.rename('package.js')) // Rename stream file
+    .pipe(gulp.dest('./src/app/config/')); // Writes package.js to dist/ folder
 });
 
 // Default task
