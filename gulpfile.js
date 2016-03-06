@@ -196,8 +196,8 @@ gulp.task('config', function() {
     constants = JSON.parse(fs.readFileSync('./src/app/config/config.json', 'utf8'));
   } catch (error) {
     constants = {
-      "config": {
-        "backendUrl": process.env.BADGE_BACKENDURL
+      'config': {
+        'backendUrl': process.env.BADGE_BACKENDURL || 'http://localhost/'
       }
     }
   }
@@ -205,7 +205,7 @@ gulp.task('config', function() {
   return ngConstant({
       name: 'badgeFrontend.config',
       templatePath: './src/app/config/template.ejs',
-      space: '  ',
+      space: '    ',
       constants: constants,
       stream: true
     })
