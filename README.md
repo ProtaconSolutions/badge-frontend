@@ -116,6 +116,7 @@ BADGE_BACKENDURL
 ## Useful resources
 * [nvm](https://github.com/creationix/nvm) - Node Version Manager - Simple bash script to manage multiple active node.js versions
 * [ncu](https://github.com/tjunnone/npm-check-updates) - Find newer versions of package dependencies than what your package.json or bower.json allows
+* [mversion](https://github.com/mikaelbr/mversion) - A cross packaging module version bumper. CLI or API for bumping versions of package.json, bower.json, *.jquery.json etc.
 
 ## Contributing
 Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
