@@ -41,7 +41,7 @@
      * @returns {string}
      */
     function getImageUrl(image) {
-      return config.backendUrl + 'image/show/' + image.hash;
+      return image ? config.backendUrl + 'image/show/' + image.hash : null;
     }
   }
 }());
