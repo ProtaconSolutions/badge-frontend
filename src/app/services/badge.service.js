@@ -17,6 +17,7 @@
    * @ngInject
    *
    * @param {*} $http
+   * @param {*} $httpParamSerializer
    * @param {*} config
    * @returns {{
    *    find: Services.BadgeService.find,
@@ -28,7 +29,7 @@
    * @constructor
    */
   function BadgeService(
-    $http,
+    $http, $httpParamSerializer,
     config
   ) {
     return {
@@ -47,8 +48,12 @@
      *
      * @returns {*}
      */
-    function find() {
-      return $http.get(_getUrl());
+    function find(params) {
+      params = params || {};
+
+      var query = $httpParamSerializer(params);
+
+      return $http.get(_getUrl() + (query ? '?' + query : ''));
     }
 
     /**

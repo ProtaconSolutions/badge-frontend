@@ -67,6 +67,6 @@
    * @private
    */
   function _badges(BadgeService) {
-    return BadgeService.find();
+    return BadgeService.find({populate: 'Image'});
   }
 }());
