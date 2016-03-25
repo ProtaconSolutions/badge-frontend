@@ -19,24 +19,24 @@
     "src"
   ],
   "dependencies": {
-    "angular": "1.5.0",
-    "angular-animate": "1.5.0",
+    "angular": "1.5.2",
+    "angular-animate": "1.5.2",
     "angular-img-http-src": "0.1.0",
     "angular-jwt": "0.0.9",
-    "angular-loading-bar": "0.8.0",
+    "angular-loading-bar": "0.9.0",
     "angular-material": "1.0.6",
     "angular-moment": "0.10.3",
     "angular-ui-router": "0.2.18",
-    "angular-sanitize": "1.5.0",
+    "angular-sanitize": "1.5.2",
     "lodash": "4.6.1",
     "ngstorage": "0.3.10",
-    "mdi": "1.4.57",
-    "moment": "2.11.2"
+    "mdi": "1.5.54",
+    "moment": "2.12.0"
   },
   "devDependencies": {},
   "overrides": {},
   "resolutions": {
-    "angular": "1.5.0",
-    "moment": "2.11.2"
+    "angular": "1.5.2",
+    "moment": "2.12.0"
   }
 }
